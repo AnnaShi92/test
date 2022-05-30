@@ -1,0 +1,42 @@
+1.案例
+    驾校一点通：http://mnks.jxedt.com/ckm1/sxlx/
+    数据接口：http://mnks.jxedt.com/get_question?r=0.2544343069870654&index=2
+    接口说明：
+        index：题号
+        {
+            id: "2",
+            question: "机动车驾驶人违法驾驶造成重大交通事故构成犯罪的，依法追究什么责任？",
+            a: "刑事责任",
+            b: "民事责任",
+            c: "经济责任",
+            d: "直接责任",
+            ta: "1",
+            imageurl: "",
+            bestanswer: "《道路交通安全法》第一百零一条：违反道路交通安全法律、法规的规定，发生重大交通事故，构成犯罪的，依法追究刑事责任，并由公安机关交通管理部门吊销机动车驾驶证。",
+            bestanswerid: "2600002",
+            Type: "2",
+            sinaimg: ""
+        }
+        id:接口数据里面题号
+        question:标题 问题
+        a,b,c,d 选项  /正确 错误选项
+        Type:1 两条数据  2四个选项
+        ta:正确答案的序号
+        bestanswer：答案的问题分析
+        
+           
+存储：
+    1.存储的方法 永久存储 localStorage.setItem('key','value') getItem('key')
+    2.分析存储的数据 有哪些 以及你保存格式
+    3.存储数据：
+        题号id  正确的个数  错误的个数  作答过的题目  正确率（可选） 
+    4.存储数据格式：
+          var info={
+              id:'1',
+              right:0,
+              wrong:0,
+              daguo:[],
+              precent:'0.00%'
+          }  
+        设置：localStorage.setItem('info',JSON.stringify(info))
+        
